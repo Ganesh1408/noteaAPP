@@ -493,18 +493,7 @@ function Home() {
         onChange={handleSearch}
         placeholder="Search Note"
       />
-
-      <button
-        className=" ml-2 w-12 h-12 md:w-16 md:h-16 rounded-[40%] border-2 "
-        onClick={() => {
-          setVisible(true);
-          setEditingId(null);
-        }}
-      >
-        <AddIcon />
-      </button>
-      </div>
-      <div className="absolute  top-32 right-24 sm:top-25 md:top-28 sm:right-34 md:right-42  flex space-x-4 z-50  p-2 " >
+       <div className="absolute top-25 right-32  sm:top-25 md:top-28 sm:right-34 md:right-42  flex space-x-4 z-50  p-2 " >
         {iconView ? (
           <GridViewIcon
             sx={{ width: "25px", height: "25px" }}
@@ -524,6 +513,18 @@ function Home() {
         //   className=" absolute right-38 md:right-40 bottom-5"
         />
       </div>
+
+      <button
+        className=" ml-2 w-12 h-12 md:w-16 md:h-16 rounded-[40%] border-2 "
+        onClick={() => {
+          setVisible(true);
+          setEditingId(null);
+        }}
+      >
+        <AddIcon />
+      </button>
+      </div>
+     
       {showArchieve
         ? ""
         : pinnedNote.length !== 0 && (
