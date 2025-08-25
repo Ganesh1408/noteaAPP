@@ -197,7 +197,7 @@ function Home() {
     };
 
     try {
-      const apiUrl = `https://noteaapp.onrender.com/${ID}`;
+      const apiUrl = `https://noteaapp.onrender.com/notes/${ID}`;
 
       const response = await fetch(apiUrl, {
         method: "PUT",
@@ -508,7 +508,7 @@ function Home() {
         {iconView ? (
           <GridViewIcon
             sx={{ width: "25px", height: "25px" }}
-            className=" absolute right-46  md:right-50 bottom-5 "
+            
             onClick={toggleIconView}
           />
         ) : (
