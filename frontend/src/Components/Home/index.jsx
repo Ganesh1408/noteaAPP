@@ -116,7 +116,7 @@ function Home() {
   const onLoadNotes = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/notes");
+      const response = await fetch("https://noteaapp.onrender.com/notes");
 
       if (response.status === 404) {
         setNote([]);
@@ -197,7 +197,7 @@ function Home() {
     };
 
     try {
-      const apiUrl = `http://localhost:3000/notes/${ID}`;
+      const apiUrl = `https://noteaapp.onrender.com/${ID}`;
 
       const response = await fetch(apiUrl, {
         method: "PUT",
@@ -259,7 +259,7 @@ function Home() {
       console.log(editingId);
       setIsLoading(true);
       try {
-        const apiUrl = `http://localhost:3000/notes/${editingId}`;
+        const apiUrl = `https://noteaapp.onrender.com/notes/${editingId}`;
         const response = await fetch(apiUrl, {
           method: "PUT",
           headers: {
@@ -327,7 +327,7 @@ function Home() {
       }
     } else {
       setIsLoading(true);
-      const apiUrl = "http://localhost:3000/notes";
+      const apiUrl = "https://noteaapp.onrender.com/notes";
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -363,7 +363,7 @@ function Home() {
         return;
       }
 
-      const apiUrl = `http://localhost:3000/notes/${ID}`;
+      const apiUrl = `https://noteaapp.onrender.com/notes/${ID}`;
       await fetch(apiUrl, {
         method: "DELETE",
       });
@@ -481,12 +481,13 @@ function Home() {
           <PersonPinIcon sx={{ width: 35, height: 36 }} />
         </div>
       </div>
+      <div className='mx-auto'>
       <SearchIcon
         sx={{ width: "30px", height: "30px" }}
         className="relative left-10 "
       />
       <input
-        className="  text-xl pl-10 rounded-[20px] mt-8 w-[75%] h-12 md:w-[90%] md:h-16 border-2 border-black-400 px-2"
+        className=" text-[10px] sm:text-[14px] md:text-xl pl-10 rounded-[20px] mx-auto mt-8 w-[75%] h-12 md:w-[80%] lg:w-[90%] md:h-16 border-2 border-black-400 px-2"
         type="search"
         value={searchInputValue}
         onChange={handleSearch}
@@ -502,24 +503,25 @@ function Home() {
       >
         <AddIcon />
       </button>
-      <div className=" relative top-2 md:top-0">
+      </div>
+      <div className=" fixed bottom-149 right-40 sm:bottom-149 sm:right-38 md:bottom-145 md:right-36  lg:bottom-145 lg:right-36 flex space-x-4 z-50   ">
         {iconView ? (
           <GridViewIcon
             sx={{ width: "25px", height: "25px" }}
-            className=" absolute  right-50 bottom-5 "
+            className=" absolute right-46  md:right-50 bottom-5 "
             onClick={toggleIconView}
           />
         ) : (
           <HorizontalSplitIcon
             sx={{ width: "25px", height: "25px" }}
             onClick={toggleIconView}
-            className=" absolute  right-50 bottom-5 "
+            // className=" absolute right-46 md:right-50 bottom-5 "
           />
         )}
         <SwapVertIcon
           sx={{ width: "25px", height: "25px" }}
           onClick={handlesort}
-          className=" absolute right-40 bottom-5"
+        //   className=" absolute right-38 md:right-40 bottom-5"
         />
       </div>
       {showArchieve
@@ -575,7 +577,7 @@ function Home() {
       {visible && (
         <div className="fixed left-0 top-50  z-1000 flex w-full h-full  flex-col  justify-center items-center">
           <form
-            className=" relative text-center shadow-xl h-[450px] mt-10 p-3 w-[500px] border-1 bg-amber-50  rounded-[8px] m-auto"
+            className=" relative text-center shadow-xl h-w[300px] w-[350px] md:h-[450px] mt-10 p-3 md:w-[500px] border-1 bg-amber-50  rounded-[8px] m-auto"
             onSubmit={submit}
           >
             <CloseIcon
