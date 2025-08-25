@@ -9,13 +9,13 @@ function NoteCard({
   eachNote,
   handleEdit,
   handleDelete,
-  handleArchieveDelete,
+  
   handleMoreFeatures,
   moreFeatures,
   toggledPinAndArchieve,
   archieveIcon,
 
-  showArchieve,
+  
   isPinned,
 
   setShowColorPicker,
@@ -79,9 +79,8 @@ function NoteCard({
                   margin: "4px",
                 }}
                 onClick={() =>
-                  showArchieve
-                    ? handleArchieveDelete(eachNote.ID)
-                    : handleDelete(eachNote.ID)
+                
+                    handleDelete(eachNote.ID)
                 }
               />
             </Tooltip>

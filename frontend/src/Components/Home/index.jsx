@@ -504,7 +504,7 @@ function Home() {
         <AddIcon />
       </button>
       </div>
-      <div className=" fixed bottom-149 right-40 sm:bottom-149 sm:right-38 md:bottom-145 md:right-36  lg:bottom-145 lg:right-36 flex space-x-4 z-50   ">
+      <div className="absolute  top-32 right-24 sm:top-25 md:top-28 sm:right-34 md:right-42  flex space-x-4 z-50  p-2 " >
         {iconView ? (
           <GridViewIcon
             sx={{ width: "25px", height: "25px" }}
