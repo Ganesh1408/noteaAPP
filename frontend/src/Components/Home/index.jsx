@@ -665,27 +665,26 @@ function Home() {
           </form>
         </div>
       )}
-      {others.length !== 0 && (
+      
         <>
+        {others.length > 0 && (
           <div className="mt-2 mb-2 bg-amber-100 w-[90%] ml-6 md:w-[90%] text-left pl-2  ">
             <p className="font-semibold">
               {showArchieve ? "Archieves" : "others"}
             </p>
           </div>
-
+ )}
           <div
             className="h-[68vh] overflow-y-auto [&::-webkit-scrollbar]:hidden  w-full   max-w-[1200px] mx-auto scroll-smooth
 "
           >
             {isLoading ? (
               <p className="text-2xl text-center">Loading...</p>
-            ) : displayNote.length > 0 ? (
+            ) : others.length > 0 ? (
               <div
                 className={`${iconView ? "flex-col   " : "flex-wrap"}   scrollbar-gutter-stable  w-full flex justify-center items-center      `}
               >
-                {displayNote.length === 0 && (
-                  <p className="mt-4 text-2xl">No Note Found</p>
-                )}
+                
                 {others.map((eachNote) => (
                   <NoteCard
                     key={eachNote.ID}
@@ -709,12 +708,12 @@ function Home() {
                   />
                 ))}{" "}
               </div>
-            ) : (
-              <p className="mt-4 text-2xl">No note available</p>
+            ) :pinnedNote.length===0 &&(
+              <p className="text-2xl text-center mt-20">{showArchieve?'No Archieve Note Available':'No Note Available'}</p>
             )}
           </div>
         </>
-      )}
+     
       <div
         className={`
     fixed bottom-0 left-0 right-0 z-50
